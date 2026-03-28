@@ -1,11 +1,13 @@
 /*** CANCEL ***/
 html, body, main { width: 100%; height: 100%; }
 main { min-height: 100%; }
+
+ul { list-style: initial; }
 /*** END CANCEL ***/
 
 /*** COLORS ***/
 html,
-.section {
+.aside {
 	background-color: #01B53B;
 }
 /*** END COLORS ***/
@@ -13,38 +15,43 @@ html,
 /*** FONTS ***/
 h1 { font-size: 4em; }
 h2 { font-size: 1.8em; }
+.aside h1 { font-size: 1.18em; }
 
 .footer { text-align: center; }
 .footer a { text-decoration: underline; }
 /*** END FONTS ***/
 
 /*** COMPONENTS ***/
+	/*** COMMONS ***/
+	section { display: flex; }
+
 	/*** .footer ***/
 	.footer { padding: 1em; }
 
-	/*** .section ***/
-	.section {
+	/*** .aside ***/
+	.aside {
 		position: fixed; top: 0; bottom: 0; left: 0; right: 0;
 		width: 100%; max-width: 80%; height: auto; max-height: 80%;
 		display: block; margin: auto;
+		padding: 1.8em;
 	}
 /*** END COMPONENTS ***/
 
 /*** INTERACTIVITY ***/
-.section { display: none; }
-#chbx4details:checked ~ main .section { display: flex; }
+.aside { display: none; }
+#chbx4details:checked ~ main .aside { display: block; }
 /*** END INTERACTIVITY ***/
 
 /*** MEDIA-QUERIES ***/
 @media screen and (max-width: 60em) {
-	/*** COMPONENTS: .section ***/
-	.section { flex-direction: column; }
+	/*** COMPONENTS: .aside ***/
+	section { flex-direction: column; }
 	
-	.section { overflow-y: scroll; }
+	.aside { overflow-y: scroll; }
 }
 @media screen and (min-width: 60em) {
-	/*** COMPONENTS: .section ***/
-	.section img {
+	/*** COMPONENTS: .aside ***/
+	.aside img {
 		width: auto; aspect-ratio: 4/1;
 		height: 100%;
 	}
@@ -52,10 +59,7 @@ h2 { font-size: 1.8em; }
 /*** END MEDIA-QUERIES ***/
 
 /*** SANDBOX ***/
-div {
-	padding: 1.8em;
-}
-header { width: 100%; height: 100%; }
+section { width: 100%; height: 100%; }
 label {
 	display: inline-block;
 	padding-top: 4em;
