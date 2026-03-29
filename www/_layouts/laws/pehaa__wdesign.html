@@ -1,0 +1,103 @@
+---
+layout: default
+---
+		{% for i in (1..10) %}
+		<input id="rdb4rulings{{ i }}" type="radio" name="rdb4rulings"{% if forloop.first %} checked{% endif %} />{% endfor %}
+		<main>
+			<header class="header">
+				<nav class="header-nav">
+					<a href="/" class="btn-cta">&larr;<span class="CSSviewportLaptop"> Back to Lex Dico</span></a>
+					<h1>PEHAA<span class="CSSviewportLaptop">: Prevention of Educational Harms and Administrative Abuse</span></h1>
+				</nav>
+				
+				<div class="header-banderole">
+					<div class="header-banderole-content">
+						<h1>PEHAA: Prevention of Educational Harms and Administrative Abuse</h1>
+						<h2>Strengthening Statutory Penalties for Academic Malpractice</h2>
+
+						<div>
+							<span><img src="/assets/images/item1a.png" />General Public</span>
+							<span><img src="/assets/images/item1c.png" />Academics</span>
+							<span><img src="/assets/images/item1c.png" />Policy Makers</span>
+						</div>
+					</div>
+					
+					<figure>
+						<img src="/assets/images/symbol2.png" />
+					</figure>
+				</div>
+			</header>
+			
+			<section class="resources">
+				<hgroup class="resources-hgroup">
+					<h3>Start with your Experience. <br />And Come Support Staturory Reform.</h3>
+					<p>Practical tools to document academic malpractice. Expose admnistrative abuse. And come support PEHAA.</p>
+				</hgroup>
+				
+				<div class="resources-list">
+					<div class="resources-list-item">
+						<img src="/assets/images/item2a.png" />
+						<span>Fill the <b>"Student Harm & Administrative Abuse"</b> survey</span>
+						<a href=""><img src="/assets/images/item3.png" /></a>
+					</div>
+					<div class="resources-list-item">
+						<img src="/assets/images/item2b.png" />
+						<span>Share your experience of <b>academic malpractice</b></span>
+						<a href=""><img src="/assets/images/item3.png" /></a>
+					</div>
+					<div class="resources-list-item">
+						<img src="/assets/images/item2c.png" />
+						<span>Access the <b>PEHAA</b> foundation for reform</span>
+						<a href=""><img src="/assets/images/item3.png" /></a>
+					</div>
+				</div>
+				
+				<div class="resources-group">
+					<p>Stay informed with updates, tools, resources supporting student protection. <br />Connect with us directly.</p>
+
+					<form>
+						<input type="url" placeholder="Enter your Linkedin URL" />
+						<input type="submit" class="btn-cta" value="Make Connection" />
+					</form>
+				</div>
+				
+				<img src="/assets/images/symbol2.png" class="u-symbol" />
+			</section>
+			
+			<section class="rulings">
+				<h4>Rulings in Favor of the Student</h4>
+				
+				<ul class="rulings-list">{% for file in site.data.laws.pehaa %}
+					<li class="rulings-list-item">
+						<div class="rulings-content">
+							<figure><img src="/assets/images/item2a.png" /></figure>
+							<div class="rulings-content-details">
+								{% for data in file %}{% if forloop.first %}<span>{{ data }}</span>{% break %}{% endif %}{% endfor %}
+								<div>
+									<p>{% for data in file[1] %}{% if forloop.last %}{% for content in data %}{{ content[1] }}{% endfor %}{% endif %}{% endfor %}</p>
+									
+									<p>{% for data in file[1] %}{% if forloop.first %}{% for content in data %}{{ content[1] }}{% endfor %}{% endif %}{% endfor %}</p>
+								</div>
+							</div>
+						</div>
+						
+						<!--
+						<nav>
+							<label for="rdb4rulings{% if forloop.index == 1 %}{{ forloop.length }}{% else %}{{ forloop.index | minus: 1 }}{% endif %}" name="rdb4rulings"> < </label>
+							<label for="rdb4rulings{% if forloop.index == forloop.length %}1{% else %}{{ forloop.index | plus: 1 }}{% endif %}" name="rdb4rulings"> > </label>
+						</nav>-->
+					</li>{% endfor %}
+					
+					<nav>
+						{% for i in (1..10) %}
+						<label for="rdb4rulings{{ i }}">{{ i }}</label>{% endfor %}
+					</nav>
+				</ul>
+				
+				<img src="/assets/images/symbol2.png" class="u-symbol" />
+			</section>
+			
+			<footer>
+				&copy; Copyrights 2026: <a href="https://babylon19.online">Babylon19</a>. All rights reserved.
+			</footer>
+		</main>
